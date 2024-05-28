@@ -2,3 +2,4 @@ streamlit
 ultralytics
 streamlit_webrtc
 gdown
+opencv-python-headless
