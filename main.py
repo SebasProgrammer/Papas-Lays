@@ -1,13 +1,17 @@
-import numpy as np
-import cv2
 import streamlit as st
-from ultralytics import YOLO
-from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
-import av
-from PIL import Image
-import gdown
-import os
-import tempfile
+try:
+    import numpy as np
+    import cv2
+    from ultralytics import YOLO
+    from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
+    import av
+    from PIL import Image
+    import gdown
+    import os
+    import tempfile
+
+except ImportError as e:
+    st.error(f"Error importing modules: {e}")
 
 st.markdown("""
     <style>
