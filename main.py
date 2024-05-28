@@ -93,7 +93,12 @@ def get_class_html(cls, detected_classes):
 
 
 class VideoTransformer(VideoTransformerBase):
-    def __init__(self, model=None, confidence=0.25):
+    def __init__(self):
+        # Establece los valores predeterminados para model y confidence
+        self.model = None
+        self.confidence = 0.25
+
+    def set_params(self, model, confidence):
         self.model = model
         self.confidence = confidence
 
@@ -108,12 +113,6 @@ class VideoTransformer(VideoTransformerBase):
                 annotated_frame = results[0].plot()  # Annotate frame
                 return av.VideoFrame.from_ndarray(cv2.cvtColor(annotated_frame, cv2.COLOR_RGB2BGR), format="bgr24")
 
-        return av.VideoFrame.from_ndarray(img, format="bgr24")
-    
-class VideoTransformer2(VideoTransformerBase):
-
-    def recv(self, frame):
-        img = frame.to_ndarray(format="bgr24")
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 def main():
@@ -166,20 +165,16 @@ def main():
             # Add button to start detection
             start_detection = st.checkbox("Iniciar detección de objetos")
 
-            if start_detection:
+            video_transformer = VideoTransformer()
+
+            if start_detection and model:
                 st.write("Detección de objetos activada")
-                webrtc_streamer(
-                    key="example",
-                    video_processor_factory=lambda: VideoTransformer(model, confidence_slider)
-                )
-            else:
-                st.write("Esperando para iniciar la detección...")
-                webrtc_streamer(
-                    key="example2",
-                    video_processor_factory=lambda: VideoTransformer2()
-                )
-        else:
-            st.error("El Modelo no se ha cargado correctamente")
+                video_transformer.set_params(model, confidence_slider)
+            
+            webrtc_streamer(
+                key="example",
+                video_transformer_factory=lambda: video_transformer
+            )
 
     elif choice == "Subir imagen":
         
