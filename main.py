@@ -51,13 +51,13 @@ def create_card(title, image_url):
 
 # Function to download the model from Google Drive
 def download_model_from_gdrive(gdrive_url, output_path):
-    gdown.download(gdrive_url, output_path, quiet=False)
+    gdown.download(gdrive_url, output_path, quiet=False, fuzzy=True)
 
 # Cache the model loading
 @st.cache_resource
 def load_model():
     model_path = 'lays_model.pt'
-    gdrive_url = 'https://drive.google.com/uc?export=download&id=1zyckUO6xBQjrZko-RDzme-oxLfg3f_cH'
+    gdrive_url = 'https://drive.google.com/file/d/1zyckUO6xBQjrZko-RDzme-oxLfg3f_cH/view?usp=sharing'
 
     if not os.path.exists(model_path):
         try:
