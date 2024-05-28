@@ -1,1 +1,1 @@
-**App Web Detector de Papas Lays con Yolov9 y Streamlit**
+App Web Detector de Papas Lays con Yolov9 y Streamlit
