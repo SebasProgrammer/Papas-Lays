@@ -81,7 +81,7 @@ classes = [
     'Salt-Vinegar', 'Salted', 'Sour Cream-Onion', 'Sweet Southern Heat Barbecue', 'Wavy', 'Yogurt-Herb'
 ]
 
-detected_classes = []
+detected_classes = set()
 detected_classes_set = set()
 
 def get_class_html(cls, detected_classes):
@@ -93,7 +93,7 @@ def get_class_html(cls, detected_classes):
 
 
 class VideoTransformer(VideoTransformerBase):
-    def __init__(self, model, confidence = 0.25):
+    def __init__(self, model=None, confidence=0.25):
         self.model = model
         self.confidence = confidence
 
@@ -101,11 +101,12 @@ class VideoTransformer(VideoTransformerBase):
         img = frame.to_ndarray(format="bgr24")
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-        results = self.model(img_rgb, conf = self.confidence)
+        if self.model:
+            results = self.model(img_rgb, conf=self.confidence)
 
-        if results:
-            annotated_frame = results[0].plot()  # Annotate frame
-            return av.VideoFrame.from_ndarray(cv2.cvtColor(annotated_frame, cv2.COLOR_RGB2BGR), format="bgr24")
+            if results:
+                annotated_frame = results[0].plot()  # Annotate frame
+                return av.VideoFrame.from_ndarray(cv2.cvtColor(annotated_frame, cv2.COLOR_RGB2BGR), format="bgr24")
 
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
@@ -152,9 +153,25 @@ def main():
     elif choice == "Usar cámara":
         st.header("Utiliza tu cámara")
         st.write("Selecciona el disposito que quieres utilizar y empieza a detectar objetos")
+
         if model:
             confidence_slider = st.sidebar.slider('Confidence', min_value=0.0, max_value=1.0, value=0.25)
-            webrtc_streamer(key="example", video_transformer_factory=lambda: VideoTransformer(model, confidence_slider))
+
+            # Add button to start detection
+            start_detection = st.checkbox("Iniciar detección de objetos")
+
+            if start_detection:
+                st.write("Detección de objetos activada")
+                webrtc_streamer(
+                    key="example",
+                    video_processor_factory=lambda: VideoTransformer(model, confidence_slider)
+                )
+            else:
+                st.write("Esperando para iniciar la detección...")
+                webrtc_streamer(
+                    key="example",
+                    video_transformer_factory=lambda: VideoTransformer()
+                )
         else:
             st.error("El Modelo no se ha cargado correctamente")
 
@@ -204,7 +221,7 @@ def main():
                                 idx = int(result.cls.cpu().numpy()[0])
                                 confidence = result.conf.cpu().numpy()[0]
                                 detected_class = classes[idx]
-                                detected_classes.append(detected_class)
+                                detected_classes.add(detected_class)
 
                                     
                                 st.markdown(f"""
