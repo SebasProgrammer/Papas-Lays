@@ -1,8 +1,8 @@
-streamlit==1.35.0
-streamlit-webrtc==0.47.7
-ultralytics==8.2.20
-gdown
-opencv-contrib-python-headless
+numpy
+opencv-python-headless
+streamlit
+ultralytics
+streamlit-webrtc
 av
-Pillow
-numpy==1.26.4
+pillow
+gdown
