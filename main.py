@@ -109,6 +109,12 @@ class VideoTransformer(VideoTransformerBase):
                 return av.VideoFrame.from_ndarray(cv2.cvtColor(annotated_frame, cv2.COLOR_RGB2BGR), format="bgr24")
 
         return av.VideoFrame.from_ndarray(img, format="bgr24")
+    
+class VideoTransformer2(VideoTransformerBase):
+
+    def recv(self, frame):
+        img = frame.to_ndarray(format="bgr24")
+        return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 def main():
 
@@ -169,8 +175,8 @@ def main():
             else:
                 st.write("Esperando para iniciar la detección...")
                 webrtc_streamer(
-                    key="example",
-                    video_transformer_factory=lambda: VideoTransformer()
+                    key="example2",
+                    video_processor_factory=lambda: VideoTransformer2()
                 )
         else:
             st.error("El Modelo no se ha cargado correctamente")
