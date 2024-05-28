@@ -1,74 +1,111 @@
-Lie Detector Web App with YOLOv9 and Streamlit
+# Lie Detector Web App with YOLOv9 and Streamlit
 
-Welcome to the Lie Detector Web App project! This web application leverages YOLOv9 for real-time lie detection, all wrapped in an easy-to-use Streamlit interface.
+<p align="center">
+  <img src="https://your-image-url.com/header-image.png" alt="Header Image" width="600">
+</p>
 
-Table of Contents
-Introduction
-Features
-Installation
-Usage
-Demo
-Technologies Used
-Contributing
-License
-Acknowledgements
-Introduction
+<p align="center">
+  <b>A Real-Time Lie Detection Web Application using Deep Learning</b>
+</p>
+
+---
+
+![GitHub last commit](https://img.shields.io/github/last-commit/your-username/lie-detector-app)
+![GitHub issues](https://img.shields.io/github/issues/your-username/lie-detector-app)
+![GitHub](https://img.shields.io/github/license/your-username/lie-detector-app)
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Demo](#demo)
+6. [Technologies Used](#technologies-used)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Acknowledgements](#acknowledgements)
+
+## Introduction
+
+<p align="center">
+  <img src="https://your-image-url.com/intro-image.png" alt="Intro Image" width="600">
+</p>
 
 This project aims to create a real-time lie detector using deep learning techniques. By analyzing micro-expressions and other facial cues, the model predicts the likelihood of deceit. The app is built with YOLOv9 for object detection and Streamlit for the web interface.
 
-Features
-Real-time detection: Stream video input and get instant lie detection results.
-User-friendly interface: Easy to use, no deep learning expertise required.
-Detailed analytics: Visual representation of detection probabilities.
-Scalability: Can be deployed on various platforms, from local machines to cloud servers.
-Installation
+## Features
+
+- **Real-time detection**: Stream video input and get instant lie detection results.
+- **User-friendly interface**: Easy to use, no deep learning expertise required.
+- **Detailed analytics**: Visual representation of detection probabilities.
+- **Scalability**: Can be deployed on various platforms, from local machines to cloud servers.
+
+## Installation
+
 To get this project up and running locally, follow these steps:
 
-Clone the repository:
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/your-username/lie-detector-app.git
+    cd lie-detector-app
+    ```
 
-bash
-Copy code
-git clone https://github.com/your-username/lie-detector-app.git
-cd lie-detector-app
-Create a virtual environment:
+2. **Create a virtual environment**:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
 
-bash
-Copy code
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-Install dependencies:
+3. **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-bash
-Copy code
-pip install -r requirements.txt
-Run the application:
+4. **Run the application**:
+    ```bash
+    streamlit run app.py
+    ```
 
-bash
-Copy code
-streamlit run app.py
-Usage
-To use the app, simply run the above command and open your web browser to http://localhost:8501. From there, you can start streaming video and the model will process it in real-time to detect potential deceit.
+## Usage
 
+To use the app, simply run the above command and open your web browser to `http://localhost:8501`. From there, you can start streaming video and the model will process it in real-time to detect potential deceit.
 
-Demo
-Check out a live demo of the app here.
+<p align="center">
+  <img src="https://your-image-url.com/usage-image.png" alt="Usage Image" width="600">
+</p>
 
+## Demo
 
-Technologies Used
-YOLOv9: For real-time object detection.
-Streamlit: For building an interactive web interface.
-OpenCV: For video processing.
-Python: The core programming language for the project.
-Contributing
-Contributions are welcome! Please read our contributing guidelines before submitting a pull request.
+Check out a live demo of the app [here](https://your-demo-url.com).
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+<p align="center">
+  <img src="https://your-image-url.com/demo-gif.gif" alt="Demo Gif" width="600">
+</p>
 
-Acknowledgements
+## Technologies Used
+
+- **YOLOv9**: For real-time object detection.
+- **Streamlit**: For building an interactive web interface.
+- **OpenCV**: For video processing.
+- **Python**: The core programming language for the project.
+
+## Contributing
+
+Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
 Special thanks to:
+- [Streamlit](https://www.streamlit.io/)
+- [YOLOv9](https://github.com/ultralytics/yolov9)
+- The open-source community for their invaluable tools and resources.
 
-Streamlit
-YOLOv9
-The open-source community for their invaluable tools and resources.
-Feel free to replace the placeholder URLs with actual links to your images, demo, and other resources. This layout should give your README a professional and comprehensive look, making it easy for others to understand and use your project.
+---
+
+<p align="center">
+  <img src="https://your-image-url.com/footer-image.png" alt="Footer Image" width="600">
+</p>
