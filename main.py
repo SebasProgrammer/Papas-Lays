@@ -173,7 +173,10 @@ def main():
             
             webrtc_streamer(
                 key="example",
-                video_transformer_factory=lambda: video_transformer
+                video_transformer_factory=lambda: video_transformer,
+                rtc_configuration={  # Add this line
+                    "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+                }
             )
 
     elif choice == "Subir imagen":
