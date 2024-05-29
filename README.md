@@ -1,7 +1,7 @@
 # Aplicación Web de Detector de Papas Lays usando YOLOv9 y Streamlit
 
 <p align="center">
-  <img src="portada.png" alt="Imagen de Cabecera" width="600" style="border: 1px solid white;">
+  <img src="portada.png" alt="Imagen de Cabecera" width="1000" style="border: 2px solid white;">
 </p>
 
 <p align="center">
