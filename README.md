@@ -10,10 +10,6 @@
 
 ---
 
-![Último commit de GitHub](https://github.com/SebasProgrammer/Papas-Lays)
-![Issues de GitHub](https://img.shields.io/github/issues/tu-usuario/lie-detector-app)
-![Licencia de GitHub](https://img.shields.io/github/license/tu-usuario/lie-detector-app)
-
 ## Tabla de Contenidos
 1. [Introducción](#introducción)
 2. [Características](#características)
