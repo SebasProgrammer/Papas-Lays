@@ -10,7 +10,7 @@
 
 ---
 
-![Último commit de GitHub](https://img.shields.io/github/last-commit/tu-usuario/lie-detector-app)
+![Último commit de GitHub](https://github.com/SebasProgrammer/Papas-Lays)
 ![Issues de GitHub](https://img.shields.io/github/issues/tu-usuario/lie-detector-app)
 ![Licencia de GitHub](https://img.shields.io/github/license/tu-usuario/lie-detector-app)
 
