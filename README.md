@@ -1,7 +1,7 @@
 # Aplicación Web de Detector de Papas Lays usando YOLOv9 y Streamlit
 
 <p align="center">
-  <img src="cabecera.png" alt="Imagen de Cabecera" width="300">
+  <img src="project.png" alt="Imagen de Cabecera" width="300">
 </p>
 
 <p align="center">
@@ -24,7 +24,7 @@
 ## Introducción
 
 <p align="center">
-  <img src="https://tu-url-de-imagen.com/imagen-introducción.png" alt="Imagen de Introducción" width="600">
+  <img src="cabecera.png" alt="Imagen de Introducción" width="600">
 </p>
 
 Este proyecto tiene como objetivo crear un detector en tiempo real de bolsas de papas Lay's utilizando técnicas de aprendizaje profundo. Al analizar imágenes de video, el modelo identifica y clasifica las bolsas de papas Lay's. La aplicación está construida con YOLOv9 para la detección de objetos y Streamlit para la interfaz web.
