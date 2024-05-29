@@ -34,7 +34,6 @@ Este proyecto tiene como objetivo crear un detector en tiempo real de bolsas de 
 - **Detección en tiempo real**: Transmite entrada de video y obtén resultados de detección de papas Lay's instantáneos.
 - **Interfaz fácil de usar**: Fácil de usar, no se requiere experiencia en aprendizaje profundo.
 - **Análisis detallado**: Representación visual de las detecciones.
-- **Escalabilidad**: Puede ser desplegada en varias plataformas, desde máquinas locales hasta servidores en la nube.
 
 ## Instalación
 
