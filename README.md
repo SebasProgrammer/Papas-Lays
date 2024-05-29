@@ -27,13 +27,13 @@
   <img src="https://tu-url-de-imagen.com/imagen-introducción.png" alt="Imagen de Introducción" width="600">
 </p>
 
-Este proyecto tiene como objetivo crear un detector de mentiras en tiempo real utilizando técnicas de aprendizaje profundo. Al analizar micro-expresiones y otros indicios faciales, el modelo predice la probabilidad de engaño. La aplicación está construida con YOLOv9 para la detección de objetos y Streamlit para la interfaz web.
+Este proyecto tiene como objetivo crear un detector en tiempo real de bolsas de papas Lay's utilizando técnicas de aprendizaje profundo. Al analizar imágenes de video, el modelo identifica y clasifica las bolsas de papas Lay's. La aplicación está construida con YOLOv9 para la detección de objetos y Streamlit para la interfaz web.
 
 ## Características
 
-- **Detección en tiempo real**: Transmite entrada de video y obtén resultados de detección de mentiras instantáneos.
+- **Detección en tiempo real**: Transmite entrada de video y obtén resultados de detección de papas Lay's instantáneos.
 - **Interfaz fácil de usar**: Fácil de usar, no se requiere experiencia en aprendizaje profundo.
-- **Análisis detallado**: Representación visual de las probabilidades de detección.
+- **Análisis detallado**: Representación visual de las detecciones.
 - **Escalabilidad**: Puede ser desplegada en varias plataformas, desde máquinas locales hasta servidores en la nube.
 
 ## Instalación
@@ -42,8 +42,8 @@ Para poner en marcha este proyecto localmente, sigue estos pasos:
 
 1. **Clona el repositorio**:
     ```bash
-    git clone https://github.com/tu-usuario/lie-detector-app.git
-    cd lie-detector-app
+    git clone https://github.com/tu-usuario/lays-detector-app.git
+    cd lays-detector-app
     ```
 
 2. **Crea un entorno virtual**:
@@ -64,7 +64,7 @@ Para poner en marcha este proyecto localmente, sigue estos pasos:
 
 ## Uso
 
-Para usar la aplicación, simplemente ejecuta el comando anterior y abre tu navegador web en `http://localhost:8501`. Desde allí, puedes comenzar a transmitir video y el modelo lo procesará en tiempo real para detectar posibles engaños.
+Para usar la aplicación, simplemente ejecuta el comando anterior y abre tu navegador web en `http://localhost:8501`. Desde allí, puedes comenzar a transmitir video y el modelo lo procesará en tiempo real para detectar bolsas de papas Lay's.
 
 <p align="center">
   <img src="https://tu-url-de-imagen.com/imagen-uso.png" alt="Imagen de Uso" width="600">
