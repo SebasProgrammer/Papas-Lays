@@ -47,14 +47,14 @@ Para poner en marcha este proyecto localmente, sigue estos pasos:
 
 2. **Crea un entorno virtual**:
     ```bash
-    python -m venv venv
+    python3 -m venv venv
     source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
     ```
 
 3. **Instala las dependencias**:
     ```bash
     pip install -r requirements.txt
-    ```
+    Agrega el archivo package.txt
 
 4. **Ejecuta la aplicación**:
     ```bash
