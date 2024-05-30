@@ -20,7 +20,7 @@ st.markdown("""
         margin: 10px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         text-align: center;
-        height: 220px;
+        height: 200px;
     }
     .card-title {
         font-size: 1.5em;
