@@ -28,8 +28,8 @@ st.markdown("""
         color: black;
     }
     .card-image {
-        width: 80%;
-        height: 120px;
+        width: 70%;
+        height: 90px;
         object-fit: cover;
         border-radius: 10px;
         margin-bottom: 10px;
