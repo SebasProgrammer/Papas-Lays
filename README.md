@@ -60,6 +60,8 @@ Para poner en marcha este proyecto localmente, sigue estos pasos:
     ```bash
     streamlit run app.py
     ```
+## Dataset
+[Descarga dataset](https://universe.roboflow.com/mehar/lays-txw7q)
 
 ## Uso
 
