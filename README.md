@@ -65,17 +65,9 @@ Para poner en marcha este proyecto localmente, sigue estos pasos:
 
 Para usar la aplicación, simplemente ejecuta el comando anterior y abre tu navegador web en `http://localhost:8501`. Desde allí, puedes comenzar a transmitir video y el modelo lo procesará en tiempo real para detectar bolsas de papas Lay's.
 
-<p align="center">
-  <img src="https://tu-url-de-imagen.com/imagen-uso.png" alt="Imagen de Uso" width="600">
-</p>
-
 ## Demostración
 
-Consulta una demostración en vivo de la aplicación [aquí](https://tu-url-de-demo.com).
-
-<p align="center">
-  <img src="https://tu-url-de-imagen.com/demo-gif.gif" alt="Gif de Demostración" width="600">
-</p>
+Consulta una demostración en vivo de la aplicación [aquí](https://papas-lays-hn4t4avnx7wuebvjxpkojs.streamlit.app/).
 
 ## Tecnologías Utilizadas
 
@@ -83,14 +75,6 @@ Consulta una demostración en vivo de la aplicación [aquí](https://tu-url-de-d
 - **Streamlit**: Para construir una interfaz web interactiva.
 - **OpenCV**: Para el procesamiento de video.
 - **Python**: El lenguaje de programación principal del proyecto.
-
-## Contribuciones
-
-¡Las contribuciones son bienvenidas! Por favor, lee nuestras [directrices de contribución](CONTRIBUTING.md) antes de enviar una solicitud de extracción.
-
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Agradecimientos
 
@@ -100,7 +84,3 @@ Agradecimientos especiales a:
 - La comunidad de código abierto por sus herramientas y recursos invaluables.
 
 ---
-
-<p align="center">
-  <img src="https://tu-url-de-imagen.com/imagen-pie.png" alt="Imagen de Pie" width="600">
-</p>
