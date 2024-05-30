@@ -20,7 +20,6 @@ st.markdown("""
         margin: 10px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         text-align: center;
-        width: 90%;
         height: 180px;
     }
     .card-title {
@@ -30,7 +29,7 @@ st.markdown("""
     }
     .card-image {
         width: 50%;
-        height: 80px;
+        height: 50%;
         object-fit: cover;
         border-radius: 10px;
         margin-bottom: 10px;
