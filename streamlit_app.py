@@ -105,7 +105,7 @@ async def process_image(image, model, confidence):
 
 def main():
     st.title("Detección de Objetos")
-    activities = ["Principal", "Usar cámara", "Subir imagen", "Subir vídeo"]
+    activities = ["Principal", "Usar cámara", "Subir imagen", "Subir vídeo", "Usar cámara RTSP"]
     choice = st.sidebar.selectbox("Selecciona actividad", activities)
     st.sidebar.markdown('---')
 
@@ -197,6 +197,35 @@ def main():
 
             with col2:
                 st.video('output.mp4')
+    elif choice == "Usar cámara RTSP":
+        st.header("Conexión a cámara RTSP")
+        rtsp_url = st.text_input("Introduce la URL RTSP", "rtsp://FamiliaConejin:Carnival2024@@@192.168.18.76:554/stream1")
+        confidence_slider = st.sidebar.slider('Confidence', min_value=0.0, max_value=1.0, value=0.25)
+        start_button = st.button("Iniciar transmisión")
+    
+        if start_button:
+            cap = cv2.VideoCapture(rtsp_url)
+            frame_window = st.image([])
+    
+            if not cap.isOpened():
+                st.error("No se pudo abrir el stream RTSP. Verifica la URL.")
+            else:
+                st.success("Transmisión iniciada. Esperando frames...")
+    
+                stop_button = st.button("Detener transmisión")
+                while cap.isOpened() and not stop_button:
+                    ret, frame = cap.read()
+                    if not ret:
+                        st.warning("No se pudo leer el frame. Puede haberse caído el stream.")
+                        break
+                    img_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    results = model(img_rgb, conf=confidence_slider)
+                    if results:
+                        annotated_frame = results[0].plot()
+                        frame_window.image(annotated_frame, channels="RGB", use_column_width=True)
+                cap.release()
+                st.info("Transmisión finalizada.")
+
 
 if __name__ == "__main__":
     main()
