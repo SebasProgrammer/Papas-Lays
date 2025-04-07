@@ -197,34 +197,40 @@ def main():
 
             with col2:
                 st.video('output.mp4')
-    elif choice == "Usar cámara RTSP":
-        st.header("Conexión a cámara RTSP")
-        rtsp_url = st.text_input("Introduce la URL RTSP", "rtsp://FamiliaConejin:Carnival2024@@@192.168.18.76:554/stream1")
-        confidence_slider = st.sidebar.slider('Confidence', min_value=0.0, max_value=1.0, value=0.25)
-        start_button = st.button("Iniciar transmisión")
+        elif choice == "Cámara RTSP":
+            st.header("Conectar a cámara RTSP")
+            rtsp_url = st.text_input("Introduce la URL RTSP", "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov")
+            confidence_slider = st.sidebar.slider('Confidence', min_value=0.0, max_value=1.0, value=0.25)
     
-        if start_button:
-            cap = cv2.VideoCapture(rtsp_url)
-            frame_window = st.image([])
+            if "rtsp_running" not in st.session_state:
+                st.session_state.rtsp_running = False
     
-            if not cap.isOpened():
-                st.error("No se pudo abrir el stream RTSP. Verifica la URL.")
-            else:
-                st.success("Transmisión iniciada. Esperando frames...")
+            col1, col2 = st.columns(2)
+            if col1.button("Iniciar transmisión"):
+                st.session_state.rtsp_running = True
+            if col2.button("Detener transmisión"):
+                st.session_state.rtsp_running = False
     
-                stop_button = st.button("Detener transmisión")
-                while cap.isOpened() and not stop_button:
-                    ret, frame = cap.read()
-                    if not ret:
-                        st.warning("No se pudo leer el frame. Puede haberse caído el stream.")
-                        break
-                    img_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                    results = model(img_rgb, conf=confidence_slider)
-                    if results:
-                        annotated_frame = results[0].plot()
-                        frame_window.image(annotated_frame, channels="RGB", use_column_width=True)
-                cap.release()
-                st.info("Transmisión finalizada.")
+            if st.session_state.rtsp_running:
+                cap = cv2.VideoCapture(rtsp_url)
+                if not cap.isOpened():
+                    st.error("No se pudo abrir el stream RTSP.")
+                    st.session_state.rtsp_running = False
+                else:
+                    stframe = st.empty()
+                    while st.session_state.rtsp_running:
+                        ret, frame = cap.read()
+                        if not ret:
+                            st.warning("No se pudo leer el frame.")
+                            break
+                        img_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                        results = model(img_rgb, conf=confidence_slider)
+                        if results:
+                            annotated_frame = results[0].plot()
+                            stframe.image(annotated_frame, channels="RGB", use_column_width=True)
+                    cap.release()
+
+        
 
 
 if __name__ == "__main__":
